@@ -1,0 +1,23 @@
+<style>
+    <?php
+    require_once "public/main.css";
+    ?>
+</style>
+
+<body>
+    <div class="wishes-results">
+        <div class="table-header row">
+            <?php for($i=0; $i<11; $i++): ?>
+                <div class="column"><?= $i ?></div>
+            <?php endfor; ?>
+        </div>
+        <?php for($i=1; $i<=count($this->simulation_results);): ?>
+            <div class="row">
+                <div class="column"><?= intval($i/10) ?></div>
+                <?php for($j=1; $i<=count($this->simulation_results) && $j<=10; $i++, $j++): ?>
+                    <div class="column"><?= $this->simulation_results[$i] ?></div>
+                <?php endfor; ?>
+            </div>
+        <?php endfor; ?>
+    </div>
+</body>

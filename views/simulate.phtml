@@ -1,0 +1,29 @@
+<style>
+    <?php
+    require_once "public/main.css";
+    ?>
+</style>
+<body>
+    <div class="RGSimulation">
+        <?php foreach($this->simulation_resultsRG as $base_crit => $simulation_result): ?>
+            <div class="row result">
+                <div class="label">Results for Base Crit = <?= $base_crit ?></div>
+                <div class="column">
+                    <div>Additional Crit per hit</div>
+                    <div>Avarage crit rate</div>
+                    <div>Additional crit rate</div>
+                </div>
+                <?php foreach ($simulation_result as $R => $result): ?>
+                    <div class="column">
+                        <div><?= $R ?></div>
+                        <div><?= $result["average_chance"] ?></div>
+                        <div><?= $result["additional_chance"] ?></div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="SPResults">
+
+    </div>
+</body>
