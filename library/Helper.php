@@ -6,4 +6,9 @@ class Helper {
         $str_data[0] = $first_letter;
         return $str_data;
     }
+
+    function isJson($string) {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }
 }
